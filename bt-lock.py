@@ -77,12 +77,26 @@ def lock_screen():
     return GLib.SOURCE_REMOVE
 
 
+def wake_screen():
+    """唤醒屏幕显示登录界面，不跳过认证（Windows Dynamic Lock 同款）"""
+    try:
+        obj = session_bus.get_object("org.gnome.ScreenSaver", "/org/gnome/ScreenSaver")
+        iface = dbus.Interface(obj, "org.gnome.ScreenSaver")
+        iface.WakeUpScreen()
+        log.info("🖥️  唤醒屏幕（锁屏界面）")
+    except Exception as e:
+        log.warning(f"唤醒屏幕失败: {e}")
+
+
 def cancel_lock_timer():
     global _lock_timer_id
     if _lock_timer_id is not None:
         GLib.source_remove(_lock_timer_id)
         _lock_timer_id = None
         log.info("✅ 设备重连，取消锁屏计时器")
+    elif is_already_locked():
+        # 已锁屏时设备回来：唤醒屏幕提示登录
+        wake_screen()
 
 
 def schedule_lock():
