@@ -1,0 +1,19 @@
+[Unit]
+Description=Bluetooth Proximity Lock
+Documentation=https://github.com/Quantum505Void/bt-proximity-lock
+After=bluetooth.target graphical-session.target dbus.socket
+Requires=dbus.socket
+PartOf=graphical-session.target
+
+[Service]
+Type=simple
+Environment=BT_MAC=E4:57:68:A2:13:02
+Environment=BT_LOCK_DELAY=25
+ExecStart=/usr/bin/python3 /home/void/.local/bin/bt-lock.py
+Restart=on-failure
+RestartSec=5
+# BT 服务启动慢时给点时间
+ExecStartPre=/bin/sleep 3
+
+[Install]
+WantedBy=graphical-session.target
