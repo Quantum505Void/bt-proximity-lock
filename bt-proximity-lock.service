@@ -1,0 +1,14 @@
+[Unit]
+Description=Bluetooth Proximity Lock
+After=bluetooth.target graphical-session.target
+PartOf=graphical-session.target
+
+[Service]
+Type=simple
+Environment=BT_MAC=YOUR_PHONE_MAC_HERE
+ExecStart=/usr/bin/python3 %h/.local/bin/bt_proximity_lock.py
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=graphical-session.target
