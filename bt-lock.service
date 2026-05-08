@@ -1,6 +1,6 @@
 [Unit]
 Description=Bluetooth Proximity Lock
-Documentation=https://github.com/Quantum505Void/bt-proximity-lock
+Documentation=https://github.com/Quantum404Void/bt-proximity-lock
 After=bluetooth.target graphical-session.target dbus.socket
 Requires=dbus.socket
 PartOf=graphical-session.target

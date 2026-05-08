@@ -24,7 +24,7 @@
 ## 安装
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/Quantum505Void/bt-proximity-lock/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/Quantum404Void/bt-proximity-lock/main/install.sh | bash
 ```
 
 或手动：

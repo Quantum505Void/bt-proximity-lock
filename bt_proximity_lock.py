@@ -3,7 +3,7 @@
 bt-proximity-lock — Linux Dynamic Lock via Bluetooth RSSI Delta
 Inspired by Windows Hello Dynamic Lock
 
-Author: Quantum505Void
+Author: Quantum404Void
 License: MIT
 """
 

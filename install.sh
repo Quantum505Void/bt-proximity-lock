@@ -2,11 +2,11 @@
 # install.sh — bt-proximity-lock one-line installer
 #
 # Usage:
-#   curl -fsSL https://raw.githubusercontent.com/Quantum505Void/bt-proximity-lock/main/install.sh | bash
+#   curl -fsSL https://raw.githubusercontent.com/Quantum404Void/bt-proximity-lock/main/install.sh | bash
 
 set -euo pipefail
 
-REPO="Quantum505Void/bt-proximity-lock"
+REPO="Quantum404Void/bt-proximity-lock"
 BRANCH="main"
 RAW="https://raw.githubusercontent.com/${REPO}/${BRANCH}"
 INSTALL_DIR="$HOME/.local/bin"
